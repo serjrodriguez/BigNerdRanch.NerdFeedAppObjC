@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ListViewControllerTableViewController.h"
 
-@interface WebViewController : UIViewController<UIWebViewDelegate>
+@interface WebViewController : UIViewController<UIWebViewDelegate, ListViewControllerDelegate>
 
 @property (nonatomic, readonly) UIWebView *webView;
 

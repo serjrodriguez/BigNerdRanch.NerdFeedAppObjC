@@ -17,6 +17,7 @@
 		49A8FCB61EA51E3900D67867 /* RSSChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A8FCB51EA51E3900D67867 /* RSSChannel.m */; };
 		49A8FCB91EA5235C00D67867 /* RSSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A8FCB81EA5235C00D67867 /* RSSItem.m */; };
 		49A8FCBC1EA528C300D67867 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A8FCBB1EA528C300D67867 /* WebViewController.m */; };
+		49A8FCBF1EA53BD100D67867 /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A8FCBE1EA53BD100D67867 /* ChannelViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		49A8FCB81EA5235C00D67867 /* RSSItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSItem.m; sourceTree = "<group>"; };
 		49A8FCBA1EA528C300D67867 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		49A8FCBB1EA528C300D67867 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		49A8FCBD1EA53BD100D67867 /* ChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelViewController.h; sourceTree = "<group>"; };
+		49A8FCBE1EA53BD100D67867 /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 			children = (
 				49A8FCB11EA5100B00D67867 /* ListViewControllerTableViewController.h */,
 				49A8FCB21EA5100B00D67867 /* ListViewControllerTableViewController.m */,
+				49A8FCBD1EA53BD100D67867 /* ChannelViewController.h */,
+				49A8FCBE1EA53BD100D67867 /* ChannelViewController.m */,
 				49A8FCBA1EA528C300D67867 /* WebViewController.h */,
 				49A8FCBB1EA528C300D67867 /* WebViewController.m */,
 				49A8FCB41EA51E3900D67867 /* RSSChannel.h */,
@@ -172,6 +177,7 @@
 			files = (
 				49A8FCB31EA5100B00D67867 /* ListViewControllerTableViewController.m in Sources */,
 				49A8FCBC1EA528C300D67867 /* WebViewController.m in Sources */,
+				49A8FCBF1EA53BD100D67867 /* ChannelViewController.m in Sources */,
 				49A8FCA21EA50FB900D67867 /* ViewController.m in Sources */,
 				49A8FC9F1EA50FB900D67867 /* AppDelegate.m in Sources */,
 				49A8FC9C1EA50FB900D67867 /* main.m in Sources */,

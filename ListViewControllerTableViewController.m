@@ -10,6 +10,7 @@
 #import "RSSChannel.h"
 #import "RSSItem.h"
 #import "WebViewController.h"
+#import "ChannelViewController.h"
 
 @interface ListViewControllerTableViewController ()
 
@@ -24,6 +25,13 @@
     self = [super initWithStyle:style];
     
     if(self){
+        
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithTitle:@"Info"
+                                                                style:UIBarButtonItemStyleBordered
+                                                               target:self action:@selector(showInfo:)];
+        
+        [[self navigationItem] setRightBarButtonItem:bbi];
+        
         [self fetchEntries];
     }
 
@@ -125,6 +133,42 @@
 
 }
 
+-(void)showInfo:(id)sender{
+
+    //Create the channel view controller
+    ChannelViewController *channelViewController = [[ChannelViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    
+    if([self splitViewController]){
+    
+        UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:channelViewController];
+        
+        NSArray *vcs = [NSArray arrayWithObjects:[self navigationController], nvc, nil];
+        
+        [[self splitViewController] setViewControllers:vcs];
+        
+        [[self splitViewController] setDelegate:channelViewController];
+        
+        NSIndexPath *selectedRow = [[self tableView] indexPathForSelectedRow];
+        
+        if (selectedRow)
+            [[self tableView] deselectRowAtIndexPath:selectedRow animated:YES];
+    }else{
+    
+        [[self navigationController] pushViewController:channelViewController animated:YES];
+    
+    }
+    
+    [channelViewController listViewController:self handleObject:channel];
+
+}
+
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+
+    if([[UIDevice currentDevice] userInterfaceIdiom] ==UIUserInterfaceIdiomPad)
+        return YES;
+        return toInterfaceOrientation == UIInterfaceOrientationPortrait;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -140,17 +184,29 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
+    if(![self splitViewController])
     [[self navigationController] pushViewController:webViewController animated:YES];
+    
+    else{
+    
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:webViewController];
+        
+        NSArray *vcs = [NSArray arrayWithObjects:[self navigationController], nav, nil];
+        
+        [[self splitViewController] setViewControllers:vcs];
+        
+        [[self splitViewController] setDelegate:webViewController];
+    
+    }
     
     RSSItem *entry = [[channel items] objectAtIndex:[indexPath row]];
     
-    NSURL *url = [NSURL URLWithString:[entry link]];
+//    NSURL *url = [NSURL URLWithString:[entry link]];
+//    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+//    [[webViewController webView] loadRequest:req];
+//    [[webViewController navigationItem] setTitle:[entry title]];
     
-    NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    
-    [[webViewController webView] loadRequest:req];
-    
-    [[webViewController navigationItem] setTitle:[entry title]];
+    [webViewController listViewController:self handleObject:entry];
 
 }
 

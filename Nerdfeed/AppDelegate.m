@@ -27,7 +27,26 @@
     WebViewController *wvc = [[WebViewController alloc] init];
     [lvc setWebViewController:wvc];
     
-    [[self window] setRootViewController:masterNav];
+    //Check if the application is running on iPad
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
+    
+        UINavigationController *detailNav = [[UINavigationController alloc] initWithRootViewController:wvc];
+        
+        NSArray *vcs = [NSArray arrayWithObjects:masterNav, detailNav, nil];
+        
+        UISplitViewController *svc = [[UISplitViewController alloc] init];
+        
+        [svc setDelegate:wvc];
+        
+        [svc setViewControllers:vcs];
+        
+        [[self window] setRootViewController:svc];
+    
+    }else{
+    
+        [[self window] setRootViewController:masterNav];
+    
+    }
     
     return YES;
 }

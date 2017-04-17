@@ -7,6 +7,7 @@
 //
 
 #import "WebViewController.h"
+#import "RSSItem.h"
 
 @interface WebViewController ()
 
@@ -17,8 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
     
 }
 
@@ -40,6 +39,29 @@
 -(UIWebView *)webView{
 
     return (UIWebView *)[self view];
+
+}
+
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+        return YES;
+        return toInterfaceOrientation == UIInterfaceOrientationPortrait;
+
+}
+
+-(void)listViewController:(ListViewControllerTableViewController *)lvc handleObject:(id)object{
+
+    RSSItem *entry = object;
+    
+    if (![entry isKindOfClass:[RSSItem class]])
+        return;
+    
+    NSURL *url = [NSURL URLWithString:[entry link]];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    [[self webView] loadRequest:req];
+    
+    [[self navigationItem] setTitle:[entry title]];
 
 }
 
