@@ -19,4 +19,6 @@
 @property (nonatomic, strong) NSString *infoString;
 @property (nonatomic, strong) NSMutableArray *items;
 
+-(void)trimItemTitles;
+
 @end
