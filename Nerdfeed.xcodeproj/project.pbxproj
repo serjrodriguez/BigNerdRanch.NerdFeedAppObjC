@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		497AB92B1EB13F3E00E36B99 /* BNRFeedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 497AB92A1EB13F3E00E36B99 /* BNRFeedStore.m */; };
+		497AB9321EB1492500E36B99 /* BNRConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 497AB9311EB1492500E36B99 /* BNRConnection.m */; };
 		49A8FC9C1EA50FB900D67867 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A8FC9B1EA50FB900D67867 /* main.m */; };
 		49A8FC9F1EA50FB900D67867 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A8FC9E1EA50FB900D67867 /* AppDelegate.m */; };
 		49A8FCA21EA50FB900D67867 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A8FCA11EA50FB900D67867 /* ViewController.m */; };
@@ -21,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		497AB9291EB13F3E00E36B99 /* BNRFeedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRFeedStore.h; sourceTree = "<group>"; };
+		497AB92A1EB13F3E00E36B99 /* BNRFeedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRFeedStore.m; sourceTree = "<group>"; };
+		497AB9301EB1492500E36B99 /* BNRConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRConnection.h; sourceTree = "<group>"; };
+		497AB9311EB1492500E36B99 /* BNRConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRConnection.m; sourceTree = "<group>"; };
 		49A8FC971EA50FB900D67867 /* Nerdfeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nerdfeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A8FC9B1EA50FB900D67867 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49A8FC9D1EA50FB900D67867 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,6 +60,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		497AB92C1EB13F4700E36B99 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				49A8FCB11EA5100B00D67867 /* ListViewControllerTableViewController.h */,
+				49A8FCB21EA5100B00D67867 /* ListViewControllerTableViewController.m */,
+				49A8FCBD1EA53BD100D67867 /* ChannelViewController.h */,
+				49A8FCBE1EA53BD100D67867 /* ChannelViewController.m */,
+				49A8FCBA1EA528C300D67867 /* WebViewController.h */,
+				49A8FCBB1EA528C300D67867 /* WebViewController.m */,
+				49A8FCB41EA51E3900D67867 /* RSSChannel.h */,
+				49A8FCB51EA51E3900D67867 /* RSSChannel.m */,
+				49A8FCB71EA5235C00D67867 /* RSSItem.h */,
+				49A8FCB81EA5235C00D67867 /* RSSItem.m */,
+				49A8FCA01EA50FB900D67867 /* ViewController.h */,
+				49A8FCA11EA50FB900D67867 /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		497AB92D1EB13F5600E36B99 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				497AB9291EB13F3E00E36B99 /* BNRFeedStore.h */,
+				497AB92A1EB13F3E00E36B99 /* BNRFeedStore.m */,
+				497AB9301EB1492500E36B99 /* BNRConnection.h */,
+				497AB9311EB1492500E36B99 /* BNRConnection.m */,
+			);
+			name = Store;
+			sourceTree = "<group>";
+		};
+		497AB92E1EB13F6900E36B99 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				49A8FCA31EA50FB900D67867 /* Main.storyboard */,
+				49A8FCA81EA50FB900D67867 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		49A8FC8E1EA50FB900D67867 = {
 			isa = PBXGroup;
 			children = (
@@ -73,24 +118,9 @@
 		49A8FC991EA50FB900D67867 /* Nerdfeed */ = {
 			isa = PBXGroup;
 			children = (
-				49A8FCB11EA5100B00D67867 /* ListViewControllerTableViewController.h */,
-				49A8FCB21EA5100B00D67867 /* ListViewControllerTableViewController.m */,
-				49A8FCBD1EA53BD100D67867 /* ChannelViewController.h */,
-				49A8FCBE1EA53BD100D67867 /* ChannelViewController.m */,
-				49A8FCBA1EA528C300D67867 /* WebViewController.h */,
-				49A8FCBB1EA528C300D67867 /* WebViewController.m */,
-				49A8FCB41EA51E3900D67867 /* RSSChannel.h */,
-				49A8FCB51EA51E3900D67867 /* RSSChannel.m */,
-				49A8FCB71EA5235C00D67867 /* RSSItem.h */,
-				49A8FCB81EA5235C00D67867 /* RSSItem.m */,
-				49A8FC9D1EA50FB900D67867 /* AppDelegate.h */,
-				49A8FC9E1EA50FB900D67867 /* AppDelegate.m */,
-				49A8FCA01EA50FB900D67867 /* ViewController.h */,
-				49A8FCA11EA50FB900D67867 /* ViewController.m */,
-				49A8FCA31EA50FB900D67867 /* Main.storyboard */,
-				49A8FCA61EA50FB900D67867 /* Assets.xcassets */,
-				49A8FCA81EA50FB900D67867 /* LaunchScreen.storyboard */,
-				49A8FCAB1EA50FB900D67867 /* Info.plist */,
+				497AB92E1EB13F6900E36B99 /* Views */,
+				497AB92D1EB13F5600E36B99 /* Store */,
+				497AB92C1EB13F4700E36B99 /* Controllers */,
 				49A8FC9A1EA50FB900D67867 /* Supporting Files */,
 			);
 			path = Nerdfeed;
@@ -99,6 +129,10 @@
 		49A8FC9A1EA50FB900D67867 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				49A8FC9D1EA50FB900D67867 /* AppDelegate.h */,
+				49A8FC9E1EA50FB900D67867 /* AppDelegate.m */,
+				49A8FCA61EA50FB900D67867 /* Assets.xcassets */,
+				49A8FCAB1EA50FB900D67867 /* Info.plist */,
 				49A8FC9B1EA50FB900D67867 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -179,8 +213,10 @@
 				49A8FCBC1EA528C300D67867 /* WebViewController.m in Sources */,
 				49A8FCBF1EA53BD100D67867 /* ChannelViewController.m in Sources */,
 				49A8FCA21EA50FB900D67867 /* ViewController.m in Sources */,
+				497AB9321EB1492500E36B99 /* BNRConnection.m in Sources */,
 				49A8FC9F1EA50FB900D67867 /* AppDelegate.m in Sources */,
 				49A8FC9C1EA50FB900D67867 /* main.m in Sources */,
+				497AB92B1EB13F3E00E36B99 /* BNRFeedStore.m in Sources */,
 				49A8FCB61EA51E3900D67867 /* RSSChannel.m in Sources */,
 				49A8FCB91EA5235C00D67867 /* RSSItem.m in Sources */,
 			);

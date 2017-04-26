@@ -37,7 +37,7 @@
         currentString = [[NSMutableString alloc] init];
         [self setInfoString:currentString];
         
-    }else if ([elementName isEqualToString:@"item"]){
+    }else if ([elementName isEqualToString:@"item"] || [elementName isEqualToString:@"entry"]){
     
         RSSItem *entry = [[RSSItem alloc] init];
         

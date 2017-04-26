@@ -40,7 +40,7 @@
 
     currentString = nil;
     
-    if([elementName isEqualToString:@"item"]){
+    if([elementName isEqualToString:@"item"] || [elementName isEqualToString:@"entry"]){
     
         [parser setDelegate:parentParserDelegate];
 
